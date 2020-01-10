@@ -9,8 +9,6 @@ AllCops:
     - "node_modules/**/*"
   DisplayCopNames: true
 
-Metrics/LineLength:
-  Max: 120
 Metrics/MethodLength:
   Include: ["app/controllers/*"]
   Max: 20
@@ -33,6 +31,8 @@ Style/GuardClause:
 Style/DateTime:
   Enabled: false
 
+Layout/LineLength:
+  Max: 120
 Layout/AlignHash:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
