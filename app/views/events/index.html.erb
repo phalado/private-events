@@ -9,3 +9,30 @@
     </li>
   <%end%>
 </ol>
+
+
+<h1>Past Events </h1>
+
+<ol>
+  <% @past_events.each do |item| %>
+    <li>
+      <span>Name: <%= item.name %></span><br>
+      <span>Date: <%= item.date%></span><br>
+      <span>Description: <%= item.description %></span>
+    </li>
+  <%end%>
+</ol>
+
+<h1>Upcoming Events </h1>
+
+<ol>
+  <% @upcoming_events.each do |item| %>
+    <li>
+      <span>Name: <%= item.name %></span><br>
+      <span>Date: <%= item.date%></span><br>
+      <span>Description: <%= item.description %></span>
+    </li>
+  <%end%>
+</ol>
+
+
