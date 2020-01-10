@@ -14,20 +14,19 @@
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
     <nav > 
-  <h2>EVENTS APP</h2>
-  <div class="welcome-message">
-    <% if signed?%>
-       hello, <%= @current_user.name %>
-    <% end %>
-</div>
-<div class="logout-button">
-<%=  link_to 'ALL EVENTS', events_path%>
-<%=  link_to 'NEW EVENT', new_event_path%>
-<%=  link_to 'LOGIN ', sessions_login_path%>
-<%=  link_to 'NEW USER', new_user_path%>
-</div>
-
-       </nav>
+      <h2>EVENTS APP</h2>
+      <div class="welcome-message">
+        <% if signed?%>
+           hello, <%= @current_user.name %>
+        <% end %>
+      </div>
+      <div class="logout-button">
+        <%=  link_to 'ALL EVENTS', events_path%>
+        <%=  link_to 'NEW EVENT', new_event_path%>
+        <%=  link_to 'LOGIN ', sessions_login_path%>
+        <%=  link_to 'NEW USER', new_user_path%>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

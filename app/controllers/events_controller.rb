@@ -1,9 +1,8 @@
 class EventsController < ApplicationController
-
   def new
     @event = Event.new
-    
   end
+
   def create
     current_user = User.find_by(id: session[:user_id])
     @event = current_user.events.build(description: params[:event][:description])
