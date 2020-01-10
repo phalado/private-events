@@ -18,8 +18,14 @@
     <% if @user.attendance.any? %>
       <h2>Attended Events</h2>
       <ol>
-        <% @user.attendance.each do |at| %>
-          <li><span>Event: <%= Event.find_by(id: at.attended_event).description %><br></span></li>
+        <% @prev_events.each do |prev| %>
+          <li><span>Event: <%= prev.name %></span></li>
+        <% end %>
+      </ol>
+      <h2>Future Events</h2>
+      <ol>
+        <% @upcoming_events.each do |coming| %>
+          <li><span>Event: <%= coming.name %></span></li>
         <% end %>
       </ol>
     <% end %>

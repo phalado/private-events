@@ -15,6 +15,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @upcoming_events = []
+    @prev_events = []
+    @user.attendance.each do |at|
+      ev = Event.find_by(id: at.attended_event)
+      @upcoming_events << ev if ev.date >= DateTime.now
+      @prev_events << ev if ev.date < DateTime.now
+    end
   end
 
   def home
