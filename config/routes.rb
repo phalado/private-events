@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #get 'events/show'
   get 'events/index'
   get 'sessions/login'
-  root 'users#home'
+  root 'sessions#login'
   post 'events/new', to:'events#create'
   # get  'users/new',   to: 'users#new'
   post 'users/new',   to: 'users#create'
