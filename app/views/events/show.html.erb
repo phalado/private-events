@@ -1,11 +1,17 @@
-<h1>Event details:</h1>
-<!-- <h2>Name:</h2>
-<%= @event.name%>
-<h2>Date:</h2>
-<%= @event.date%>
-<h2>Description:</h2>
-<%= @event.description%>
--->
-<h2>Creator:</h2>
+<div class="p-3">
+  <h1>Event details:</h1>
+  <!-- <h2>Name:</h2>
+  <%= @event.name%>
+  <h2>Date:</h2>
+  <%= @event.date%>
+  <h2>Description:</h2>
+  <%= @event.description%>
+  -->
+  <h2>Creator:</h2>
+  <%= @creator.name%>
 
-<%= @creator.name%>
+  <h2>Attendees:</h2>
+  <% @event.attendance.each do |atendee| %>
+    <%= User.find_by(id: atendee.attendee).name %><br>
+  <% end %>
+</div>

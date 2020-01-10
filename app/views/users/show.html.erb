@@ -9,8 +9,17 @@
         <% @user.events.each do |event| %>
           <li>
             <span>Event: <%= event.name %></span><br>
-            <span>Date: <%= event.date %></span>
+            <span>Date: <%= event.date %></span><br>
+            <span>Description: <%= event.description %></span>
           </li>
+        <% end %>
+      </ol>
+    <% end %>
+    <% if @user.attendance.any? %>
+      <h2>Attended Events</h2>
+      <ol>
+        <% @user.attendance.each do |at| %>
+          <li><span>Event: <%= Event.find_by(id: at.attended_event).description %><br></span></li>
         <% end %>
       </ol>
     <% end %>

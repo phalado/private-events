@@ -1,7 +1,11 @@
 <h1>List of all Events: </h1>
 
 <ol>
-<% @events.each do |item| %>
-<li>Name:  <%= item.name %> <br>Date: <%= item.date%><br> Description: <%= item.description %> </li>
-<%end%>
+  <% @events.each do |item| %>
+    <li>
+      <span>Name: <%= item.name %></span><br>
+      <span>Date: <%= item.date%></span><br>
+      <span>Description: <%= item.description %></span>
+    </li>
+  <%end%>
 </ol>
