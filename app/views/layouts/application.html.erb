@@ -17,7 +17,7 @@
       <h2>EVENTS APP</h2>
       <div class="welcome-message">
         <% if signed?%>
-           hello, <%= @current_user.name %>
+          <span><%= link_to @current_user.name, @current_user%></span>
         <% end %>
       </div>
       <div class="logout-button">

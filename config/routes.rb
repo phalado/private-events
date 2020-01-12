@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root 'sessions#login'
   get  'events/index'
   get  'sessions/login'
-  post 'events/new',     to: 'events#create'
   post 'users/new',      to: 'users#create'
+  post 'events/new',     to: 'events#create'
   post 'sessions/login', to: 'sessions#create'
   resources :users
   resources :sessions
