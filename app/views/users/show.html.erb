@@ -19,13 +19,21 @@
       <h2>Attended Events</h2>
       <ol>
         <% @prev_events.each do |prev| %>
-          <li><span>Event: <%= prev.name %></span></li>
+          <li>
+            <span>Event: <%= prev.name %></span><br>
+            <span>Date: <%= prev.date %></span><br>
+            <span>Description: <%= prev.description %></span>
+          </li>
         <% end %>
       </ol>
       <h2>Future Events</h2>
       <ol>
         <% @upcoming_events.each do |coming| %>
-          <li><span>Event: <%= coming.name %></span></li>
+          <li>
+            <span>Event: <%= coming.name %></span><br>
+            <span>Date: <%= coming.date %></span><br>
+            <span>Description: <%= coming.description %></span>
+          </li>
         <% end %>
       </ol>
     <% end %>
