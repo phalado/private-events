@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:info] = 'Account created.'
+               
+      log_in(@user)
       redirect_to user_path(@user.id)
     else
       render 'new'
@@ -15,13 +17,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @upcoming_events = []
-    @prev_events = []
-    @user.attendance.each do |at|
-      ev = Event.find_by(id: at.attended_event)
-      @upcoming_events << ev if ev.date >= DateTime.now
-      @prev_events << ev if ev.date < DateTime.now
-    end
+    @upcoming_events = Event.upcoming_events
+    @prev_events = Event.past
+    
   end
 
   def home; end
