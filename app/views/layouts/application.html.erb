@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PrivateEvents</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <nav > 
+      <h2>EVENTS APP</h2>
+      <div class="welcome-message">
+        <% if signed?%>
+          <span><%= link_to @current_user.name, @current_user%></span>
+        <% end %>
+      </div>
+      <div class="logout-button">
+        <%=  link_to 'ALL EVENTS', events_path%>
+        <%=  link_to 'NEW EVENT', new_event_path%>
+        <%=  link_to 'LOGIN ', sessions_login_path%>
+        <%=  link_to 'NEW USER', new_user_path%>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

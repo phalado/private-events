@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-4">
+    <h1>Welcome <%= @user.name %> </h1>
+  </div>
+  <div class="col-md-8">
+    <% if @user.events.any? %>
+      <h2>Events</h2>
+      <ol>
+        <% @user.events.each do |event| %>
+          <li>
+            <span>Event: <%= event.name %></span><br>
+            <span>Date: <%= event.date %></span><br>
+            <span>Description: <%= event.description %></span>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+    <% if @user.attendance.any? %>
+      <h2>Attended Events</h2>
+      <ol>
+        <% @prev_events.each do |prev| %>
+          <li>
+            <span>Event: <%= prev.name %></span><br>
+            <span>Date: <%= prev.date %></span><br>
+            <span>Description: <%= prev.description %></span>
+          </li>
+        <% end %>
+      </ol>
+      <h2>Future Events</h2>
+      <ol>
+        <% @upcoming_events.each do |coming| %>
+          <li>
+            <span>Event: <%= coming.name %></span><br>
+            <span>Date: <%= coming.date %></span><br>
+            <span>Description: <%= coming.description %></span>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+</div>

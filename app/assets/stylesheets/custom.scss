@@ -1,0 +1,25 @@
+@import 'bootstrap';
+@import 'bootstrap-sprockets';
+
+nav {
+  width: 100%;
+  background: black;
+  color:white;
+  height: auto;
+  display:flex;
+  justify-content: space-between;
+  
+  * {
+    display:flex;
+    margin: 10px;
+  }
+}
+
+span {
+  margin: 0;
+}
+
+.logout-button {
+  background: yellow;
+  color: black;
+}

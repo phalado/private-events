@@ -1,0 +1,15 @@
+<!-- Changed this page from a form_for to a form_tag -->
+<div class="row">
+  <div class="col-md-4 text-center col-md-offset-3">
+    <h1> Enter your ID or Name </h1>
+
+    <%= form_tag sessions_path do %>
+
+      <% label_tag :id %>
+      <%= text_field_tag :id, params[:id] %>
+
+      <%= submit_tag "Sign in" %>
+    <%end%>
+
+  </div>
+</div>
